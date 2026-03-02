@@ -17,7 +17,7 @@ dotenv.config({
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests/api-tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -43,12 +43,12 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     //headless: false,
     //viewport: { width: 2560 , height: 1600 },
-    baseURL: process.env.API_BASE_URL,
+   /*  baseURL: process.env.API_BASE_URL,
     extraHTTPHeaders: {
       Accept: 'application/json',
       "Content-Type": 'application/json',
       //Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=]"
-    },
+    }, */
     viewport: null,
     launchOptions: {
       args: ['--start-maximized']
@@ -93,7 +93,15 @@ export default defineConfig({
 
     {
       name: 'apiTest',
-      testDir: './tests/api-tests'
+      testDir: './tests/api-tests',
+      use: {
+        baseURL: process.env.API_BASE_URL,
+      extraHTTPHeaders: {
+      Accept: 'application/json',
+      "Content-Type": 'application/json',
+      //Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=]"
+    },
+     }
     }
 
     /* Test against mobile viewports. */
