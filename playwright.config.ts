@@ -43,6 +43,12 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     //headless: false,
     //viewport: { width: 2560 , height: 1600 },
+    baseURL: process.env.API_BASE_URL,
+    extraHTTPHeaders: {
+      Accept: 'application/json',
+      "Content-Type": 'application/json',
+      //Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=]"
+    },
     viewport: null,
     launchOptions: {
       args: ['--start-maximized']
@@ -84,6 +90,11 @@ export default defineConfig({
         storageState: './playwright/.auth/auth.json'
       },
     },
+
+    {
+      name: 'apiTest',
+      testDir: './tests/api-tests'
+    }
 
     /* Test against mobile viewports. */
     // {

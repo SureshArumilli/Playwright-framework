@@ -1,0 +1,35 @@
+{
+    "content_type": "application/json; charset=utf-8",
+    "booking_id": 2,
+    "booking_id2": 267,
+    "booking_id3": 924,
+    "firstname": "Eric",
+    "create_booking": {
+        "firstname": "Suresh",
+        "lastname": "Mohana",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
+
+    "update_booking": {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "totalprice": 11,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Extra pillows please"
+    },
+
+   "partially_update_booking": {
+        "firstname": "Mohana",
+        "lastname": "Suresh"
+     }
+}
